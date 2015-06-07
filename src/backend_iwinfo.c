@@ -25,7 +25,7 @@ char *mlsc_backend_create_request(char *device, int debug_level) {
             }
             x++;
             snprintf((req + strlen(req)), BUFFER_SIZE - strlen(req) - 3,
-                     "{\"macAddress\": \"%x:%x:%x:%x:%x:%x\", \"signalStrength\": %d}",
+                     "{\"macAddress\": \"%.2X:%.2X:%.2X:%.2X:%.2X:%.2X\", \"signalStrength\": %d}",
                      entry->mac[0], entry->mac[1], entry->mac[2], entry->mac[3], entry->mac[4], entry->mac[5],
                      ((int) entry->signal) - 256);
         }
